@@ -4,275 +4,92 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Veloura — Beauty, Curated.</title>
-<meta name="description" content="Veloura — sélection beauté premium : skincare, makeup, haircare, bodycare et bundles."/>
-<meta name="theme-color" content="#7A0F29"/>
+<meta name="description" content="Veloura — skincare, makeup, haircare, bodycare et bundles."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --wine:#790f29;--wine-2:#9a2140;--ink:#251419;--muted:#77656b;
-  --ivory:#fffaf7;--cream:#f7ece6;--rose:#ecd3ca;--line:#eadfd9;
-  --white:#fff;--shadow:0 18px 45px rgba(68,15,31,.11);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-.container{width:min(1260px,94vw);margin:auto}
-.topbar{background:var(--wine);color:#fff;font-size:12px}
-.topbar .container{min-height:34px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;text-align:center}
-.topitem{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
-.topitem svg{width:16px;height:16px}
-.header{background:rgba(255,250,247,.96);border-bottom:1px solid rgba(121,15,41,.08);position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
-.nav{height:76px;display:grid;grid-template-columns:210px 1fr 190px;align-items:center;gap:20px}
-.logo{color:var(--wine);font-family:"Cormorant Garamond",serif;font-size:47px;font-weight:700;line-height:.8}
-.logo small{display:block;font-family:Inter,sans-serif;font-size:8px;letter-spacing:.25em;margin-top:7px;font-weight:700}
-.menu{display:flex;justify-content:center;gap:31px;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600}
-.menu a{position:relative;padding:28px 0}
-.menu a.active:after,.menu a:hover:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:2px;background:var(--wine)}
-.icons{display:flex;justify-content:flex-end;gap:17px;align-items:center}
-.iconbtn{width:34px;height:34px;border:0;background:transparent;display:grid;place-items:center;position:relative;cursor:pointer}
-.iconbtn svg{width:23px;height:23px;stroke:var(--ink)}
-.badge{position:absolute;right:-2px;top:-2px;background:var(--wine);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center}
-
-.hero{background:
-  linear-gradient(90deg,rgba(255,247,243,.98) 0%,rgba(255,247,243,.95) 36%,rgba(255,247,243,.25) 59%,rgba(255,247,243,.03) 100%),
-  url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1800&q=90') center 36%/cover no-repeat;
-  min-height:430px;display:flex;align-items:center;border-bottom:1px solid #ead8d0;
-}
-.hero .container{display:grid;grid-template-columns:48% 52%;align-items:stretch}
-.hero-copy{padding:42px 0 34px;max-width:530px}
-.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.28em;color:var(--wine);font-weight:700;margin-bottom:11px}
-.hero h1{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:80px;line-height:.78;margin:0;font-weight:600;letter-spacing:-.04em}
-.hero h1 em{display:block;font-size:49px;line-height:1.08;font-weight:600}
-.hero p{font-size:15px;line-height:1.6;max-width:440px;color:#4e3a40;margin:19px 0 21px}
-.cta{display:inline-flex;align-items:center;gap:15px;background:var(--wine);color:#fff;border-radius:999px;padding:13px 24px;font-weight:600;font-size:13px}
-.trust{display:flex;gap:28px;margin-top:30px;align-items:center}
-.trust-item{display:flex;gap:9px;align-items:center;font-size:11px;font-weight:600;max-width:115px;line-height:1.25;color:#4f343c}
-.trust-item svg{width:28px;height:28px;stroke:var(--wine);flex:none}
-.hero-right{position:relative}
-.hero-words{position:absolute;right:9px;top:115px;color:#fff;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.05;text-shadow:0 1px 12px rgba(65,19,32,.35)}
-.hero-circle{position:absolute;right:92px;top:136px;width:135px;height:135px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;color:#fff;font-family:"Cormorant Garamond",serif;font-size:30px;font-style:italic;transform:rotate(-8deg);text-align:center;line-height:.85}
-
-.categories{padding:10px 0 4px;background:#fff}
-.categories-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.cat{position:relative;height:165px;border-radius:7px;overflow:hidden;background:#eee;box-shadow:0 7px 18px rgba(56,16,28,.08)}
-.cat img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
-.cat:hover img{transform:scale(1.04)}
-.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(38,8,17,.7))}
-.cat-copy{position:absolute;z-index:2;left:16px;right:50px;bottom:12px;color:#fff}
-.cat-copy h3{font-family:"Cormorant Garamond",serif;font-size:30px;line-height:.95;margin:0 0 3px}
-.cat-copy p{margin:0;font-size:10px}
-.cat-arrow{position:absolute;z-index:3;right:13px;bottom:17px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--wine);display:grid;place-items:center;font-weight:800}
-
-.mainshop{background:#fff;padding:8px 0 0}
-.shopgrid{display:grid;grid-template-columns:1.72fr .93fr;gap:18px;align-items:stretch}
-.section-title{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:40px;line-height:.95;margin:6px 0 0}
-.section-sub{font-size:12px;color:var(--muted);margin:3px 0 17px}
-.products{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #f1e8e3}
-.product{padding:15px 10px 12px;border-right:1px solid #f1e8e3;min-width:0}
-.product:last-child{border-right:0}
-.pimg{height:132px;background:linear-gradient(#fff,#fbf4f1);border-radius:8px;display:grid;place-items:center;position:relative;overflow:hidden}
-.bottle{position:relative;width:54px;height:96px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 8px 18px rgba(80,35,43,.08)}
-.bottle:before{content:"";position:absolute;left:13px;top:-22px;width:28px;height:30px;border-radius:5px 5px 2px 2px;background:var(--cap,#6bcad2)}
-.bottle:after{content:"V";position:absolute;inset:38px 0 auto;text-align:center;font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:25px;font-weight:700}
-.tube{width:42px;height:103px;border-radius:13px 13px 8px 8px;background:#f8fbfc;border:1px solid #dfe8eb;box-shadow:0 8px 18px rgba(80,35,43,.08);position:relative}
-.tube:after{content:"V";position:absolute;top:41px;width:100%;text-align:center;font-family:"Cormorant Garamond",serif;font-size:24px;color:#3c8da7}
-.dropper{width:48px;height:85px;background:#f4c89a;border-radius:8px 8px 12px 12px;border:1px solid #e0af7d;position:relative}
-.dropper:before{content:"";position:absolute;width:26px;height:41px;left:10px;top:-39px;border-radius:7px;background:#fff;border:1px solid #ddd}
-.dropper:after{content:"";position:absolute;width:11px;height:35px;left:18px;top:-8px;background:#d1a06d;border-radius:8px}
-.mascara{display:flex;gap:7px;align-items:end}.mascara span:first-child{width:28px;height:86px;border-radius:9px;background:#c98c93}.mascara span:last-child{width:14px;height:105px;border-radius:6px;background:#2f2024}
-.pbrand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:16px;margin-top:9px}
-.pname{font-size:10px;color:#4e3d41;min-height:26px}
-.rating{color:#e9a320;font-size:10px;margin:3px 0}
-.price{font-size:12px;font-weight:800}
-.add{margin-top:8px;width:100%;border:0;border-radius:999px;background:var(--wine);color:#fff;font-size:10px;padding:8px;cursor:pointer}
-.add:disabled{opacity:.72;cursor:not-allowed}
-
-.routine{border-radius:13px;overflow:hidden;min-height:330px;position:relative;background:
-  linear-gradient(90deg,rgba(255,243,238,.97) 0%,rgba(255,243,238,.76) 50%,rgba(255,243,238,.05) 100%),
-  url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=90') center/cover no-repeat;
-  display:flex;align-items:center;padding:30px}
-.routine-copy{max-width:265px}
-.routine .eyebrow{font-size:9px}
-.routine h2{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:48px;line-height:.82;margin:9px 0 13px}
-.routine p{font-size:12px;line-height:1.5;color:#6a4b53}
-.routine .cta{padding:11px 19px;font-size:11px}
-
-.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-top:5px;background:#fff}
-.value{padding:18px 15px;display:flex;gap:11px;align-items:center;justify-content:center}
-.value svg{width:31px;height:31px;stroke:var(--wine)}
-.value b{display:block;font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--wine)}
-.value span{font-size:9px;color:var(--muted)}
-
-.brands{background:#fff;padding:17px 0 26px}
-.brands-grid{display:grid;grid-template-columns:240px 1fr;align-items:center}
-.brand-intro{padding-right:26px;border-right:1px solid #eee}
-.brand-intro h3{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:.84;color:var(--wine);margin:0 0 5px}
-.brand-intro p{font-size:10px;color:var(--muted);margin:0 0 12px}
-.brand-intro .cta{padding:9px 16px;font-size:10px}
-.brand-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding-left:30px;align-items:center}
-.brandlogo{min-height:68px;display:grid;place-items:center;text-align:center;font-weight:700;color:#303036}
-.brandlogo.cerave{font-size:22px;color:#257bb7}.brandlogo.lrp{font-size:11px}.brandlogo.biod{font-size:18px;color:#2873b7}.brandlogo.garnier{font-size:18px;color:#567e16}.brandlogo.may{font-size:15px;letter-spacing:.18em}.brandlogo.loreal{font-size:20px}
-
-footer{background:#2e111a;color:#f7e9ed;padding:24px 0;text-align:center;font-size:11px}
-.carttoast{position:fixed;right:18px;bottom:18px;background:var(--wine);color:#fff;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.25s;z-index:100}
-.carttoast.show{opacity:1;transform:none}
-
-@media(max-width:1000px){
-  .nav{grid-template-columns:170px 1fr 150px}.menu{gap:16px;font-size:15px}
-  .hero{min-height:390px}.hero h1{font-size:67px}.hero h1 em{font-size:43px}
-  .shopgrid{grid-template-columns:1fr}.products{grid-template-columns:repeat(5,1fr)}.routine{min-height:285px}
-  .categories-grid{grid-template-columns:repeat(3,1fr)}.cat:nth-child(4),.cat:nth-child(5){display:block}
-  .brand-row{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:760px){
-  .topbar .container{grid-template-columns:1fr}.topitem:nth-child(2),.topitem:nth-child(3){display:none}
-  .nav{height:66px;grid-template-columns:1fr auto}.menu{display:none}.icons .iconbtn:nth-child(-n+3){display:none}
-  .logo{font-size:39px}.hero{background-position:64% 45%;min-height:auto}
-  .hero .container{display:block}.hero-copy{padding:35px 0 305px;max-width:460px}
-  .hero h1{font-size:57px}.hero h1 em{font-size:35px}.hero p{font-size:13px;max-width:330px}
-  .trust{gap:14px;flex-wrap:wrap}.hero-right{display:none}
-  .categories{padding-top:8px}.categories-grid{grid-template-columns:1fr 1fr;gap:8px}.cat{height:150px}.cat:nth-child(5){grid-column:1/-1}
-  .shopgrid{display:block}.products{grid-template-columns:1fr 1fr}.product{border-bottom:1px solid #f1e8e3}.product:nth-child(odd){border-right:1px solid #f1e8e3}.product:nth-child(even){border-right:0}
-  .routine{margin-top:14px;min-height:300px;background-position:67% center}.routine h2{font-size:42px}
-  .values{grid-template-columns:1fr 1fr}.value{justify-content:flex-start}
-  .brands-grid{grid-template-columns:1fr}.brand-intro{border:0;padding:0 0 15px}.brand-row{padding:0;grid-template-columns:repeat(2,1fr)}
-}
+:root{--wine:#7f112d;--wine2:#9a2440;--ink:#211317;--muted:#77696d;--line:#eee5e1;--cream:#fff9f6;--rose:#f1d7d1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}.shell{width:min(1448px,100%);margin:auto}.inner{width:min(1210px,92vw);margin:auto}
+.top{height:31px;background:var(--wine);color:white;font-size:12px}.top .inner{height:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.top span{display:flex;justify-content:center;gap:8px;align-items:center}
+.top svg{width:15px;height:15px}.header{height:69px;background:#fff}.nav{height:100%;display:grid;grid-template-columns:230px 1fr 180px;align-items:center}.logo{font:700 45px/.8 "Cormorant Garamond",serif;color:var(--wine)}.logo small{display:block;font:700 8px/1 Inter,sans-serif;letter-spacing:.26em;margin-top:7px}.menu{display:flex;justify-content:center;gap:29px;font:600 16px "Cormorant Garamond",serif}.menu a{padding:25px 0;position:relative}.menu a.active:after{content:"";position:absolute;left:0;right:0;bottom:16px;height:2px;background:var(--wine)}.icons{display:flex;justify-content:flex-end;gap:15px}.ib{border:0;background:transparent;position:relative;padding:3px}.ib svg{width:23px;height:23px;stroke:#111;fill:none}.badge{position:absolute;right:-4px;top:-5px;background:var(--wine);color:#fff;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;font-size:9px}
+.hero{height:355px;position:relative;overflow:hidden;background:linear-gradient(90deg,#fff7f3 0 38%,rgba(255,247,243,.65) 50%,rgba(255,247,243,.06) 72%),url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1800&q=90') 72% 36%/cover no-repeat}.hero .inner{height:100%;display:grid;grid-template-columns:47% 53%}.hero-copy{padding-top:28px;z-index:2}.eyebrow{font-size:11px;letter-spacing:.28em;color:var(--wine);font-weight:700;text-transform:uppercase}.hero h1{font:600 78px/.76 "Cormorant Garamond",serif;color:var(--wine);margin:12px 0 0;letter-spacing:-.045em}.hero h1 em{display:block;font-size:50px;line-height:1.05}.hero p{font-size:15px;line-height:1.5;max-width:430px;margin:17px 0 14px}.cta{display:inline-flex;align-items:center;gap:14px;background:var(--wine);color:#fff;border-radius:999px;padding:11px 24px;font:600 13px/1 Inter,sans-serif}.trust{display:flex;gap:33px;margin-top:21px}.trust div{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:600;line-height:1.2;max-width:120px}.trust svg{width:27px;height:27px;stroke:var(--wine);fill:none}.hero-right{position:relative}.flower{position:absolute;right:172px;top:115px;width:112px;height:112px}.flower i{position:absolute;left:50%;top:50%;width:62px;height:36px;margin:-18px 0 0 -31px;border-radius:70% 40% 70% 40%;background:linear-gradient(145deg,#ffe3e0,#e9aaa9);transform-origin:center}.flower i:nth-child(2){transform:rotate(45deg)}.flower i:nth-child(3){transform:rotate(90deg)}.flower i:nth-child(4){transform:rotate(135deg)}.circleText{position:absolute;right:88px;top:150px;width:135px;height:135px;border:1px solid rgba(255,255,255,.9);border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 28px/.82 "Cormorant Garamond",serif;text-align:center;transform:rotate(-8deg);text-shadow:0 2px 12px rgba(72,20,35,.35)}.sideWords{position:absolute;right:6px;top:134px;color:#fff;font:italic 23px/.96 "Cormorant Garamond",serif;text-shadow:0 2px 12px rgba(72,20,35,.4)}
+.categories{padding:7px 8px 0}.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.cat{height:165px;border-radius:7px;overflow:hidden;position:relative}.cat img{width:100%;height:100%;object-fit:cover;display:block}.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 43%,rgba(44,8,18,.7))}.cc{position:absolute;left:17px;bottom:11px;z-index:2;color:white}.cc h3{font:600 29px/.9 "Cormorant Garamond",serif;margin:0 0 2px}.cc p{font-size:10px;margin:0}.arr{position:absolute;right:13px;bottom:17px;z-index:3;background:white;color:var(--wine);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:24px}
+.shop{padding:9px 0 0}.shopgrid{display:grid;grid-template-columns:1.95fr 1fr;gap:17px}.left{position:relative}.title{font:600 39px/.9 "Cormorant Garamond",serif;color:var(--wine);margin:0 0 1px}.sub{font-size:12px;color:var(--muted);margin-bottom:10px}.arrows{position:absolute;right:7px;top:27px;display:flex;gap:10px}.arrows span{width:28px;height:28px;border-radius:50%;background:#fff2ef;display:grid;place-items:center;color:var(--wine)}.products{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #f2e9e6}.product{padding:9px 13px 10px;border-right:1px solid #f2e9e6}.product:last-child{border-right:0}.pic{height:125px;display:grid;place-items:center}.prodimg{max-height:110px;max-width:78px;object-fit:contain}.pbrand{font:700 15px "Cormorant Garamond",serif}.pname{font-size:10px;min-height:25px}.rating{font-size:10px;color:#e5a51f;margin-top:2px}.rating span{color:#8a7d80}.price{font-size:12px;font-weight:800}.add{margin-top:7px;width:100%;border:0;border-radius:999px;background:var(--wine);color:white;padding:8px 4px;font-size:10px}.routine{height:280px;border-radius:12px;overflow:hidden;padding:35px 32px;position:relative;background:linear-gradient(90deg,rgba(255,239,235,.96),rgba(255,239,235,.72) 52%,rgba(255,239,235,.05)),url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=90') center/cover}.routine .eyebrow{font-size:9px}.routine h2{font:600 50px/.78 "Cormorant Garamond",serif;color:var(--wine);margin:9px 0 12px}.routine p{font-size:12px;line-height:1.42;max-width:240px;color:#694c54}.routine .cta{padding:10px 19px;font-size:11px}
+.values{margin-top:5px;border-top:1px solid #eee;border-bottom:1px solid #eee;display:grid;grid-template-columns:repeat(4,1fr)}.value{min-height:60px;display:flex;align-items:center;justify-content:center;gap:10px}.value svg{width:30px;height:30px;stroke:var(--wine);fill:none}.value b{display:block;font:600 17px "Cormorant Garamond",serif;color:var(--wine)}.value small{font-size:9px;color:var(--muted)}
+.brands{padding:13px 0 22px}.brandgrid{display:grid;grid-template-columns:270px 1fr;align-items:center}.brandIntro{border-right:1px solid #eee;padding-right:28px}.brandIntro h3{font:600 33px/.83 "Cormorant Garamond",serif;color:var(--wine);margin:0}.brandIntro p{font-size:10px;color:var(--muted);margin:5px 0 10px}.brandIntro .cta{padding:8px 16px;font-size:10px}.brandrow{padding-left:29px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:center}.brand{min-height:64px;display:grid;place-items:center;text-align:center;font-weight:700}.cerave{color:#2377ad;font-size:22px}.lrp{font-size:11px}.biod{color:#2772b5;font-size:18px}.garnier{color:#5a7e19;font-size:18px}.may{font-size:14px;letter-spacing:.17em}.loreal{font-size:19px}
+.toast{position:fixed;right:18px;bottom:18px;background:var(--wine);color:#fff;padding:11px 15px;border-radius:10px;font-size:12px;opacity:0;transform:translateY(8px);transition:.2s}.toast.show{opacity:1;transform:none}
+@media(max-width:900px){.menu{gap:14px;font-size:14px}.nav{grid-template-columns:190px 1fr 140px}.hero h1{font-size:65px}.hero h1 em{font-size:41px}.cats{grid-template-columns:repeat(3,1fr)}.shopgrid{grid-template-columns:1fr}.products{grid-template-columns:repeat(5,1fr)}.brandrow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.top .inner{grid-template-columns:1fr}.top span:nth-child(n+2){display:none}.header{height:64px}.nav{grid-template-columns:1fr auto}.menu{display:none}.icons .ib:not(:last-child){display:none}.hero{height:auto;background-position:63% center}.hero .inner{display:block}.hero-copy{padding:31px 0 290px}.hero h1{font-size:56px}.hero h1 em{font-size:35px}.hero-right{display:none}.cats{grid-template-columns:1fr 1fr}.cat{height:145px}.cat:last-child{grid-column:1/-1}.products{grid-template-columns:1fr 1fr}.product{border-bottom:1px solid #eee}.routine{margin-top:12px}.values{grid-template-columns:1fr 1fr}.brandgrid{grid-template-columns:1fr}.brandIntro{border:0;padding-bottom:14px}.brandrow{padding:0;grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="container">
-    <div class="topitem">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
-      Livraison partout au Maroc
-    </div>
-    <div class="topitem">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
-      Paiement à la livraison
-    </div>
-    <div class="topitem">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 3 7 3v5c0 5-3.3 8.2-7 10-3.7-1.8-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></svg>
-      Produits 100% authentiques
-    </div>
-  </div>
-</div>
-
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="#top">Veloura<small>BEAUTY, CURATED.</small></a>
-    <nav class="menu">
-      <a href="#top" class="active">Accueil</a><a href="#categories">Skincare</a><a href="#categories">Makeup</a>
-      <a href="#categories">Haircare</a><a href="#categories">Bodycare</a><a href="#brands">Bundles</a>
-      <a href="#brands">Marques</a><a href="#brands">À propos</a>
-    </nav>
-    <div class="icons">
-      <button class="iconbtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button>
-      <button class="iconbtn" aria-label="Account"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></svg></button>
-      <button class="iconbtn" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg></button>
-      <button class="iconbtn" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l1 13H5z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="badge" id="cartCount">0</span></button>
-    </div>
-  </div>
-</header>
+<div class="shell">
+<div class="top"><div class="inner">
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Livraison partout au Maroc</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>Paiement à la livraison</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 3 7 3v5c0 5-3.3 8.2-7 10-3.7-1.8-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></svg>Produits 100% authentiques</span>
+</div></div>
+<header class="header"><div class="inner nav">
+<a class="logo" href="#top">Veloura<small>BEAUTY, CURATED.</small></a>
+<nav class="menu"><a class="active" href="#top">Accueil</a><a href="#categories">Skincare</a><a href="#categories">Makeup</a><a href="#categories">Haircare</a><a href="#categories">Bodycare</a><a href="#brands">Bundles</a><a href="#brands">Marques</a><a href="#brands">À propos</a></nav>
+<div class="icons">
+<button class="ib"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button>
+<button class="ib"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></svg></button>
+<button class="ib"><svg viewBox="0 0 24 24"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg></button>
+<button class="ib"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 13H5z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="badge" id="count">0</span></button>
+</div></div></header>
 
 <main id="top">
-<section class="hero">
-  <div class="container">
-    <div class="hero-copy">
-      <div class="eyebrow">Révèle ta plus belle version</div>
-      <h1>Veloura <em>Beauty, Curated.</em></h1>
-      <p>Une sélection des meilleures marques de cosmétiques pour une beauté saine, naturelle et éclatante.</p>
-      <a class="cta" href="#products">Découvrir nos produits <span>→</span></a>
-      <div class="trust">
-        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg><span>Produits 100% authentiques</span></div>
-        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span>Livraison partout au Maroc</span></div>
-        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span>Paiement à la livraison</span></div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-circle">More<br>than<br>Beauty</div>
-      <div class="hero-words">Skincare<br>Makeup<br>Haircare<br>Bodycare<br>& More</div>
-    </div>
-  </div>
-</section>
+<section class="hero"><div class="inner"><div class="hero-copy">
+<div class="eyebrow">Révèle ta plus belle version</div>
+<h1>Veloura <em>Beauty, Curated.</em></h1>
+<p>Une sélection des meilleures marques de cosmétiques pour une beauté saine, naturelle et éclatante.</p>
+<a class="cta" href="#products">Découvrir nos produits →</a>
+<div class="trust">
+<div><svg viewBox="0 0 24 24"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg>Produits 100% authentiques</div>
+<div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Livraison partout au Maroc</div>
+<div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>Paiement à la livraison</div>
+</div></div>
+<div class="hero-right"><div class="flower"><i></i><i></i><i></i><i></i></div><div class="circleText">More<br>than<br>Beauty</div><div class="sideWords">Skincare<br>Makeup<br>Haircare<br>Bodycare<br>& More</div></div>
+</div></section>
 
-<section class="categories" id="categories">
-  <div class="container categories-grid">
-    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=85" alt="Skincare"><div class="cat-copy"><h3>Skincare</h3><p>Une peau saine et éclatante</p></div><span class="cat-arrow">›</span></a>
-    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=85" alt="Makeup"><div class="cat-copy"><h3>Makeup</h3><p>Sublime ta beauté naturelle</p></div><span class="cat-arrow">›</span></a>
-    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=85" alt="Haircare"><div class="cat-copy"><h3>Haircare</h3><p>Des cheveux plus forts et plus beaux</p></div><span class="cat-arrow">›</span></a>
-    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?auto=format&fit=crop&w=800&q=85" alt="Bodycare"><div class="cat-copy"><h3>Bodycare</h3><p>Un soin complet de la tête aux pieds</p></div><span class="cat-arrow">›</span></a>
-    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=85" alt="Bundles"><div class="cat-copy"><h3>Bundles</h3><p>Nos coffrets beauté exclusifs</p></div><span class="cat-arrow">›</span></a>
-  </div>
-</section>
+<section class="categories" id="categories"><div class="cats">
+<a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=90"><div class="cc"><h3>Skincare</h3><p>Une peau saine et éclatante</p></div><span class="arr">›</span></a>
+<a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=90"><div class="cc"><h3>Makeup</h3><p>Révélez votre beauté naturelle</p></div><span class="arr">›</span></a>
+<a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=90"><div class="cc"><h3>Haircare</h3><p>Des cheveux plus forts et plus beaux</p></div><span class="arr">›</span></a>
+<a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?auto=format&fit=crop&w=800&q=90"><div class="cc"><h3>Bodycare</h3><p>Un soin complet de la tête aux pieds</p></div><span class="arr">›</span></a>
+<a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=90"><div class="cc"><h3>Bundles</h3><p>Nos coffrets beauté exclusifs</p></div><span class="arr">›</span></a>
+</div></section>
 
-<section class="mainshop" id="products">
-  <div class="container shopgrid">
-    <div>
-      <h2 class="section-title">Nos Best Sellers</h2>
-      <div class="section-sub">Aperçu du futur catalogue — les vraies photos produits seront ajoutées ensuite.</div>
-      <div class="products">
-        <article class="product"><div class="pimg"><div class="bottle" style="--cap:#55bdc7"></div></div><div class="pbrand">CeraVe</div><div class="pname">Gel Nettoyant Moussant</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(120)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
-        <article class="product"><div class="pimg"><div class="tube"></div></div><div class="pbrand">La Roche-Posay</div><div class="pname">Sérum Hyalu B5</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(98)</span></div><div class="price">199 DH</div><button class="add">Ajouter</button></article>
-        <article class="product"><div class="pimg"><div class="dropper"></div></div><div class="pbrand">Garnier</div><div class="pname">Eau Micellaire</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(156)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
-        <article class="product"><div class="pimg"><div class="bottle" style="--cap:#d82b69"></div></div><div class="pbrand">Bioderma</div><div class="pname">Sensibio H2O</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(112)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
-        <article class="product"><div class="pimg"><div class="mascara"><span></span><span></span></div></div><div class="pbrand">Maybelline</div><div class="pname">Lash Sensational</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(89)</span></div><div class="price">119 DH</div><button class="add">Ajouter</button></article>
-      </div>
-    </div>
-    <aside class="routine">
-      <div class="routine-copy">
-        <div class="eyebrow">Votre rituel beauté</div>
-        <h2>Beauty<br>Routines</h2>
-        <p>Des routines personnalisées pour une peau, des cheveux et un bien-être au quotidien.</p>
-        <a class="cta" href="#brands">Découvrir les routines →</a>
-      </div>
-    </aside>
-  </div>
-</section>
+<section class="shop inner" id="products"><div class="shopgrid">
+<div class="left"><h2 class="title">Nos Best Sellers</h2><div class="sub">Les produits préférés de notre communauté.</div><div class="arrows"><span>‹</span><span>›</span></div>
+<div class="products">
+<article class="product"><div class="pic"><img class="prodimg" src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/products/foaming-facial-cleanser/cerave_foaming-facial-cleanser_12oz_front.jpg"></div><div class="pbrand">CeraVe</div><div class="pname">Gel Nettoyant Moussant</div><div class="rating">★ 4.8 <span>(120)</span></div><div class="price">129 DH</div><button class="add">🛒 Ajouter</button></article>
+<article class="product"><div class="pic"><img class="prodimg" src="https://www.laroche-posay.us/on/demandware.static/-/Sites-lrp-master-catalog/default/dw737745f7/product/March-2023-Product-Images/Hyalu-B5-Serum-3337875583626-Front.png"></div><div class="pbrand">La Roche-Posay</div><div class="pname">Sérum Hyalu B5</div><div class="rating">★ 4.9 <span>(98)</span></div><div class="price">199 DH</div><button class="add">🛒 Ajouter</button></article>
+<article class="product"><div class="pic"><img class="prodimg" src="https://www.garnierusa.com/-/media/project/loreal/brand-sites/garnier/usa/us/products/skin-active/micellar-cleansing-water-all-in-1/garnier-skinactive-micellar-cleansing-water-all-in-1-400ml.png"></div><div class="pbrand">Garnier</div><div class="pname">Eau Micellaire</div><div class="rating">★ 4.7 <span>(156)</span></div><div class="price">129 DH</div><button class="add">🛒 Ajouter</button></article>
+<article class="product"><div class="pic"><img class="prodimg" src="https://www.bioderma.us/sites/us/files/styles/packshot_product/public/products/%7B135447%7D_%7BABC-12oz%7D_%7B3401345935571%7D.png"></div><div class="pbrand">Bioderma</div><div class="pname">Sensibio H2O</div><div class="rating">★ 4.8 <span>(112)</span></div><div class="price">129 DH</div><button class="add">🛒 Ajouter</button></article>
+<article class="product"><div class="pic"><div style="display:flex;gap:8px;align-items:end"><span style="width:27px;height:88px;border-radius:9px;background:#c98c93"></span><span style="width:13px;height:105px;border-radius:6px;background:#211317"></span></div></div><div class="pbrand">Maybelline</div><div class="pname">Lash Sensational</div><div class="rating">★ 4.6 <span>(89)</span></div><div class="price">119 DH</div><button class="add">🛒 Ajouter</button></article>
+</div></div>
+<aside class="routine"><div class="eyebrow">Votre rituel beauté</div><h2>Beauty<br>Routines</h2><p>Des routines personnalisées pour une peau, des cheveux et un bien-être au quotidien.</p><a class="cta" href="#brands">Découvrir les routines →</a></aside>
+</div></section>
 
-<div class="values container">
-  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2 7 7-7 13L5 9z"/><path d="M5 9h14M9 2l3 7 3-7"/></svg><div><b>Marques reconnues</b><span>Les meilleures marques internationales</span></div></div>
-  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg><div><b>Conseils beauté</b><span>Des recommandations personnalisées</span></div></div>
-  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14v-4a8 8 0 0 1 16 0v4"/><path d="M4 14h3v5H4zM17 14h3v5h-3z"/></svg><div><b>Support client</b><span>Une équipe à ton écoute</span></div></div>
-  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg><div><b>Satisfaction garantie</b><span>Ton expérience au centre</span></div></div>
+<div class="values inner">
+<div class="value"><svg viewBox="0 0 24 24"><path d="m12 2 7 7-7 13L5 9z"/><path d="M5 9h14M9 2l3 7 3-7"/></svg><div><b>Marques reconnues</b><small>Les meilleures marques internationales</small></div></div>
+<div class="value"><svg viewBox="0 0 24 24"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg><div><b>Conseils beauté</b><small>Des recommandations personnalisées</small></div></div>
+<div class="value"><svg viewBox="0 0 24 24"><path d="M4 14v-4a8 8 0 0 1 16 0v4"/><path d="M4 14h3v5H4zM17 14h3v5h-3z"/></svg><div><b>Support client</b><small>Une équipe à ton écoute</small></div></div>
+<div class="value"><svg viewBox="0 0 24 24"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg><div><b>Satisfaction garantie</b><small>Des milliers de clientes satisfaites</small></div></div>
 </div>
 
-<section class="brands" id="brands">
-  <div class="container brands-grid">
-    <div class="brand-intro">
-      <h3>Des marques<br>de confiance</h3>
-      <p>Une sélection des plus grandes marques de cosmétiques.</p>
-      <a class="cta" href="#products">Voir toutes les marques →</a>
-    </div>
-    <div class="brand-row">
-      <div class="brandlogo cerave">CeraVe</div>
-      <div class="brandlogo lrp">LA ROCHE-POSAY<br><small>LABORATOIRE DERMATOLOGIQUE</small></div>
-      <div class="brandlogo biod">BIODERMA</div>
-      <div class="brandlogo garnier">GARNIER</div>
-      <div class="brandlogo may">MAYBELLINE</div>
-      <div class="brandlogo loreal">L'ORÉAL<br><small>PARIS</small></div>
-    </div>
-  </div>
-</section>
+<section class="brands inner" id="brands"><div class="brandgrid">
+<div class="brandIntro"><h3>Des marques<br>de confiance</h3><p>Une sélection des plus grandes marques de cosmétiques.</p><a class="cta" href="#products">Voir toutes les marques →</a></div>
+<div class="brandrow"><div class="brand cerave">CeraVe</div><div class="brand lrp">LA ROCHE-POSAY<br><small>LABORATOIRE DERMATOLOGIQUE</small></div><div class="brand biod">BIODERMA</div><div class="brand garnier">GARNIER</div><div class="brand may">MAYBELLINE</div><div class="brand loreal">L'ORÉAL<br><small>PARIS</small></div></div>
+</div></section>
 </main>
-
-<footer>© 2026 Veloura · Beauty, Curated. · Version pré-lancement</footer>
-<div class="carttoast" id="toast">Produit ajouté à l’aperçu du panier.</div>
-
+</div>
+<div class="toast" id="toast">Produit ajouté au panier.</div>
 <script>
-let count=0;
-const countEl=document.getElementById('cartCount');
-const toast=document.getElementById('toast');
-document.querySelectorAll('.add').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    count++;countEl.textContent=count;
-    toast.classList.add('show');
-    setTimeout(()=>toast.classList.remove('show'),1300);
-  });
-});
+let c=0;const n=document.getElementById('count'),t=document.getElementById('toast');
+document.querySelectorAll('.add').forEach(b=>b.onclick=()=>{n.textContent=++c;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1200)});
 </script>
-</body>
-</html>
+</body></html>
