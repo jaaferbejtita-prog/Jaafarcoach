@@ -1,75 +1,278 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Veloura — Beauty, Curated.</title>
-<meta name="description" content="Veloura — skincare, makeup, haircare et self-care soigneusement sélectionnés.">
-<meta name="theme-color" content="#6e1728">
+<meta name="description" content="Veloura — sélection beauté premium : skincare, makeup, haircare, bodycare et bundles."/>
+<meta name="theme-color" content="#7A0F29"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--wine:#6e1728;--wine2:#8a2439;--ink:#24171b;--ivory:#fff9f4;--cream:#f7ede6;--line:#eadfd9;--muted:#74656a;--white:#fff;--shadow:0 22px 60px rgba(91,28,41,.12)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92vw);margin:auto}.announcement{background:var(--wine);color:#fff;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.03em}.nav-shell{position:sticky;top:0;z-index:20;background:rgba(255,249,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(110,23,40,.08)}nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}.logo{font:700 34px/1 Georgia,serif;color:var(--wine);letter-spacing:-.03em}.navlinks{display:flex;gap:24px;font-size:13px;font-weight:700}.btn{border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer}.primary{background:var(--wine);color:#fff}.ghost{background:#fff;color:var(--wine);border:1px solid var(--line)}
-.hero{padding:46px 0 70px}.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}.kicker{color:var(--wine);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.hero h1{font:600 clamp(50px,7vw,88px)/.95 Georgia,serif;letter-spacing:-.045em;margin:14px 0 18px}.hero h1 em{display:block;color:var(--wine);font-weight:400}.hero p{font-size:18px;line-height:1.72;color:var(--muted);max-width:590px}.cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:25px;color:#594b4f;font-size:12px}.hero-visual{min-height:560px;border-radius:36px;overflow:hidden;position:relative;box-shadow:var(--shadow);background:linear-gradient(145deg,#efd8cf,#f8eee8 58%,#d5ac9f)}.hero-visual svg{position:absolute;inset:0;width:100%;height:100%}.note{position:absolute;left:22px;bottom:20px;background:rgba(255,255,255,.84);backdrop-filter:blur(8px);border:1px solid #fff;border-radius:16px;padding:12px 15px;font-size:11px;box-shadow:0 10px 25px rgba(56,22,28,.12)}.note b{display:block;color:var(--wine);font-size:13px;margin-bottom:2px}
-section{padding:78px 0}.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:30px}.head h2{font:600 clamp(36px,5vw,56px)/1.02 Georgia,serif;margin:0;letter-spacing:-.03em}.head p{max-width:520px;color:var(--muted);line-height:1.65;margin:0}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.cat{min-height:305px;border-radius:24px;overflow:hidden;position:relative;box-shadow:0 14px 34px rgba(71,28,37,.08)}.cat svg{position:absolute;inset:0;width:100%;height:100%}.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 46%,rgba(25,9,14,.78))}.cat-copy{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;color:#fff}.cat-copy h3{font:600 27px/1 Georgia,serif;margin:0 0 5px}.cat-copy p{margin:0;font-size:12px;color:#f8eaed}
-.prelaunch{background:#fffaf7}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}.pvis{height:270px;position:relative;background:linear-gradient(145deg,#f2e4dc,#fff)}.pvis svg{position:absolute;inset:0;width:100%;height:100%}.tag{position:absolute;top:13px;left:13px;background:var(--wine);color:#fff;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}.pbody{padding:17px}.pbody h3{margin:0 0 7px;font-size:16px}.pbody p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.soon{margin-top:14px;width:100%;border:0;border-radius:999px;padding:12px;background:var(--cream);color:var(--wine);font-weight:800}
-.story{display:grid;grid-template-columns:1fr 1fr;background:var(--wine);border-radius:32px;overflow:hidden;color:#fff}.story-copy{padding:52px}.story-copy h2{font:600 53px/1 Georgia,serif;margin:12px 0 18px}.story-copy p{color:#ecd9dd;line-height:1.72}.story-art{min-height:440px;position:relative;background:#ead2ca}.story-art svg{position:absolute;inset:0;width:100%;height:100%}.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.why-card{background:#fff;border:1px solid var(--line);border-radius:21px;padding:25px}.n{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--wine);font-weight:900}.why-card h3{margin:14px 0 8px}.why-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.brand{background:#fff;border:1px solid var(--line);border-radius:15px;min-height:72px;display:grid;place-items:center;text-align:center;padding:10px;font-size:12px;font-weight:900;color:#514247}.brand span{display:block;font-size:9px;color:var(--muted);font-weight:600;margin-top:3px}.faq{max-width:880px;margin:auto}.faq details{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px 19px;margin:11px 0}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);line-height:1.65}.launch{background:linear-gradient(120deg,#58101f,#8a2439);color:#fff;border-radius:29px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:25px}.launch h2{font:600 41px/1.08 Georgia,serif;margin:0 0 8px}.launch p{margin:0;color:#f0dce0}
-footer{padding:44px 0 28px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:25px}.footer-logo{font:700 31px Georgia,serif;color:var(--wine)}footer p,footer a{color:var(--muted);font-size:13px;line-height:1.6}footer a{display:block;margin:7px 0}.copy{border-top:1px solid var(--line);margin-top:28px;padding-top:17px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media(max-width:920px){.navlinks{display:none}.hero-grid,.story{grid-template-columns:1fr}.hero-visual{min-height:500px}.cats,.products{grid-template-columns:repeat(2,1fr)}.why{grid-template-columns:1fr}.brands{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.story-copy{padding:38px}.story-copy h2{font-size:44px}}
-@media(max-width:560px){nav{height:66px}.logo{font-size:29px}.nav-shell .btn{display:none}.hero{padding-top:32px}.hero h1{font-size:51px}.hero-visual{min-height:420px}.cats,.products{grid-template-columns:1fr}.head{display:block}.head p{margin-top:12px}.story-copy h2{font-size:38px}.brands{grid-template-columns:repeat(2,1fr)}.launch{display:block}.launch .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr}}
+:root{
+  --wine:#790f29;--wine-2:#9a2140;--ink:#251419;--muted:#77656b;
+  --ivory:#fffaf7;--cream:#f7ece6;--rose:#ecd3ca;--line:#eadfd9;
+  --white:#fff;--shadow:0 18px 45px rgba(68,15,31,.11);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1260px,94vw);margin:auto}
+.topbar{background:var(--wine);color:#fff;font-size:12px}
+.topbar .container{min-height:34px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;text-align:center}
+.topitem{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.topitem svg{width:16px;height:16px}
+.header{background:rgba(255,250,247,.96);border-bottom:1px solid rgba(121,15,41,.08);position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
+.nav{height:76px;display:grid;grid-template-columns:210px 1fr 190px;align-items:center;gap:20px}
+.logo{color:var(--wine);font-family:"Cormorant Garamond",serif;font-size:47px;font-weight:700;line-height:.8}
+.logo small{display:block;font-family:Inter,sans-serif;font-size:8px;letter-spacing:.25em;margin-top:7px;font-weight:700}
+.menu{display:flex;justify-content:center;gap:31px;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600}
+.menu a{position:relative;padding:28px 0}
+.menu a.active:after,.menu a:hover:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:2px;background:var(--wine)}
+.icons{display:flex;justify-content:flex-end;gap:17px;align-items:center}
+.iconbtn{width:34px;height:34px;border:0;background:transparent;display:grid;place-items:center;position:relative;cursor:pointer}
+.iconbtn svg{width:23px;height:23px;stroke:var(--ink)}
+.badge{position:absolute;right:-2px;top:-2px;background:var(--wine);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center}
+
+.hero{background:
+  linear-gradient(90deg,rgba(255,247,243,.98) 0%,rgba(255,247,243,.95) 36%,rgba(255,247,243,.25) 59%,rgba(255,247,243,.03) 100%),
+  url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1800&q=90') center 36%/cover no-repeat;
+  min-height:430px;display:flex;align-items:center;border-bottom:1px solid #ead8d0;
+}
+.hero .container{display:grid;grid-template-columns:48% 52%;align-items:stretch}
+.hero-copy{padding:42px 0 34px;max-width:530px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.28em;color:var(--wine);font-weight:700;margin-bottom:11px}
+.hero h1{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:80px;line-height:.78;margin:0;font-weight:600;letter-spacing:-.04em}
+.hero h1 em{display:block;font-size:49px;line-height:1.08;font-weight:600}
+.hero p{font-size:15px;line-height:1.6;max-width:440px;color:#4e3a40;margin:19px 0 21px}
+.cta{display:inline-flex;align-items:center;gap:15px;background:var(--wine);color:#fff;border-radius:999px;padding:13px 24px;font-weight:600;font-size:13px}
+.trust{display:flex;gap:28px;margin-top:30px;align-items:center}
+.trust-item{display:flex;gap:9px;align-items:center;font-size:11px;font-weight:600;max-width:115px;line-height:1.25;color:#4f343c}
+.trust-item svg{width:28px;height:28px;stroke:var(--wine);flex:none}
+.hero-right{position:relative}
+.hero-words{position:absolute;right:9px;top:115px;color:#fff;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.05;text-shadow:0 1px 12px rgba(65,19,32,.35)}
+.hero-circle{position:absolute;right:92px;top:136px;width:135px;height:135px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;color:#fff;font-family:"Cormorant Garamond",serif;font-size:30px;font-style:italic;transform:rotate(-8deg);text-align:center;line-height:.85}
+
+.categories{padding:10px 0 4px;background:#fff}
+.categories-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.cat{position:relative;height:165px;border-radius:7px;overflow:hidden;background:#eee;box-shadow:0 7px 18px rgba(56,16,28,.08)}
+.cat img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
+.cat:hover img{transform:scale(1.04)}
+.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(38,8,17,.7))}
+.cat-copy{position:absolute;z-index:2;left:16px;right:50px;bottom:12px;color:#fff}
+.cat-copy h3{font-family:"Cormorant Garamond",serif;font-size:30px;line-height:.95;margin:0 0 3px}
+.cat-copy p{margin:0;font-size:10px}
+.cat-arrow{position:absolute;z-index:3;right:13px;bottom:17px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--wine);display:grid;place-items:center;font-weight:800}
+
+.mainshop{background:#fff;padding:8px 0 0}
+.shopgrid{display:grid;grid-template-columns:1.72fr .93fr;gap:18px;align-items:stretch}
+.section-title{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:40px;line-height:.95;margin:6px 0 0}
+.section-sub{font-size:12px;color:var(--muted);margin:3px 0 17px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #f1e8e3}
+.product{padding:15px 10px 12px;border-right:1px solid #f1e8e3;min-width:0}
+.product:last-child{border-right:0}
+.pimg{height:132px;background:linear-gradient(#fff,#fbf4f1);border-radius:8px;display:grid;place-items:center;position:relative;overflow:hidden}
+.bottle{position:relative;width:54px;height:96px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 8px 18px rgba(80,35,43,.08)}
+.bottle:before{content:"";position:absolute;left:13px;top:-22px;width:28px;height:30px;border-radius:5px 5px 2px 2px;background:var(--cap,#6bcad2)}
+.bottle:after{content:"V";position:absolute;inset:38px 0 auto;text-align:center;font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:25px;font-weight:700}
+.tube{width:42px;height:103px;border-radius:13px 13px 8px 8px;background:#f8fbfc;border:1px solid #dfe8eb;box-shadow:0 8px 18px rgba(80,35,43,.08);position:relative}
+.tube:after{content:"V";position:absolute;top:41px;width:100%;text-align:center;font-family:"Cormorant Garamond",serif;font-size:24px;color:#3c8da7}
+.dropper{width:48px;height:85px;background:#f4c89a;border-radius:8px 8px 12px 12px;border:1px solid #e0af7d;position:relative}
+.dropper:before{content:"";position:absolute;width:26px;height:41px;left:10px;top:-39px;border-radius:7px;background:#fff;border:1px solid #ddd}
+.dropper:after{content:"";position:absolute;width:11px;height:35px;left:18px;top:-8px;background:#d1a06d;border-radius:8px}
+.mascara{display:flex;gap:7px;align-items:end}.mascara span:first-child{width:28px;height:86px;border-radius:9px;background:#c98c93}.mascara span:last-child{width:14px;height:105px;border-radius:6px;background:#2f2024}
+.pbrand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:16px;margin-top:9px}
+.pname{font-size:10px;color:#4e3d41;min-height:26px}
+.rating{color:#e9a320;font-size:10px;margin:3px 0}
+.price{font-size:12px;font-weight:800}
+.add{margin-top:8px;width:100%;border:0;border-radius:999px;background:var(--wine);color:#fff;font-size:10px;padding:8px;cursor:pointer}
+.add:disabled{opacity:.72;cursor:not-allowed}
+
+.routine{border-radius:13px;overflow:hidden;min-height:330px;position:relative;background:
+  linear-gradient(90deg,rgba(255,243,238,.97) 0%,rgba(255,243,238,.76) 50%,rgba(255,243,238,.05) 100%),
+  url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=90') center/cover no-repeat;
+  display:flex;align-items:center;padding:30px}
+.routine-copy{max-width:265px}
+.routine .eyebrow{font-size:9px}
+.routine h2{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:48px;line-height:.82;margin:9px 0 13px}
+.routine p{font-size:12px;line-height:1.5;color:#6a4b53}
+.routine .cta{padding:11px 19px;font-size:11px}
+
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-top:5px;background:#fff}
+.value{padding:18px 15px;display:flex;gap:11px;align-items:center;justify-content:center}
+.value svg{width:31px;height:31px;stroke:var(--wine)}
+.value b{display:block;font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--wine)}
+.value span{font-size:9px;color:var(--muted)}
+
+.brands{background:#fff;padding:17px 0 26px}
+.brands-grid{display:grid;grid-template-columns:240px 1fr;align-items:center}
+.brand-intro{padding-right:26px;border-right:1px solid #eee}
+.brand-intro h3{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:.84;color:var(--wine);margin:0 0 5px}
+.brand-intro p{font-size:10px;color:var(--muted);margin:0 0 12px}
+.brand-intro .cta{padding:9px 16px;font-size:10px}
+.brand-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding-left:30px;align-items:center}
+.brandlogo{min-height:68px;display:grid;place-items:center;text-align:center;font-weight:700;color:#303036}
+.brandlogo.cerave{font-size:22px;color:#257bb7}.brandlogo.lrp{font-size:11px}.brandlogo.biod{font-size:18px;color:#2873b7}.brandlogo.garnier{font-size:18px;color:#567e16}.brandlogo.may{font-size:15px;letter-spacing:.18em}.brandlogo.loreal{font-size:20px}
+
+footer{background:#2e111a;color:#f7e9ed;padding:24px 0;text-align:center;font-size:11px}
+.carttoast{position:fixed;right:18px;bottom:18px;background:var(--wine);color:#fff;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.25s;z-index:100}
+.carttoast.show{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .nav{grid-template-columns:170px 1fr 150px}.menu{gap:16px;font-size:15px}
+  .hero{min-height:390px}.hero h1{font-size:67px}.hero h1 em{font-size:43px}
+  .shopgrid{grid-template-columns:1fr}.products{grid-template-columns:repeat(5,1fr)}.routine{min-height:285px}
+  .categories-grid{grid-template-columns:repeat(3,1fr)}.cat:nth-child(4),.cat:nth-child(5){display:block}
+  .brand-row{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .topbar .container{grid-template-columns:1fr}.topitem:nth-child(2),.topitem:nth-child(3){display:none}
+  .nav{height:66px;grid-template-columns:1fr auto}.menu{display:none}.icons .iconbtn:nth-child(-n+3){display:none}
+  .logo{font-size:39px}.hero{background-position:64% 45%;min-height:auto}
+  .hero .container{display:block}.hero-copy{padding:35px 0 305px;max-width:460px}
+  .hero h1{font-size:57px}.hero h1 em{font-size:35px}.hero p{font-size:13px;max-width:330px}
+  .trust{gap:14px;flex-wrap:wrap}.hero-right{display:none}
+  .categories{padding-top:8px}.categories-grid{grid-template-columns:1fr 1fr;gap:8px}.cat{height:150px}.cat:nth-child(5){grid-column:1/-1}
+  .shopgrid{display:block}.products{grid-template-columns:1fr 1fr}.product{border-bottom:1px solid #f1e8e3}.product:nth-child(odd){border-right:1px solid #f1e8e3}.product:nth-child(even){border-right:0}
+  .routine{margin-top:14px;min-height:300px;background-position:67% center}.routine h2{font-size:42px}
+  .values{grid-template-columns:1fr 1fr}.value{justify-content:flex-start}
+  .brands-grid{grid-template-columns:1fr}.brand-intro{border:0;padding:0 0 15px}.brand-row{padding:0;grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
-<div class="announcement">Livraison partout au Maroc · Paiement à la livraison · Sélection beauté premium</div>
-<div class="nav-shell"><div class="wrap"><nav>
-<a href="#top" class="logo">Veloura</a>
-<div class="navlinks"><a href="#categories">Catégories</a><a href="#selection">Sélection</a><a href="#why">Pourquoi Veloura</a><a href="#faq">FAQ</a></div>
-<button class="btn ghost" onclick="document.querySelector('#selection').scrollIntoView({behavior:'smooth'})">Voir la sélection</button>
-</nav></div></div>
+<div class="topbar">
+  <div class="container">
+    <div class="topitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      Livraison partout au Maroc
+    </div>
+    <div class="topitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+      Paiement à la livraison
+    </div>
+    <div class="topitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 3 7 3v5c0 5-3.3 8.2-7 10-3.7-1.8-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></svg>
+      Produits 100% authentiques
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#top">Veloura<small>BEAUTY, CURATED.</small></a>
+    <nav class="menu">
+      <a href="#top" class="active">Accueil</a><a href="#categories">Skincare</a><a href="#categories">Makeup</a>
+      <a href="#categories">Haircare</a><a href="#categories">Bodycare</a><a href="#brands">Bundles</a>
+      <a href="#brands">Marques</a><a href="#brands">À propos</a>
+    </nav>
+    <div class="icons">
+      <button class="iconbtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button>
+      <button class="iconbtn" aria-label="Account"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></svg></button>
+      <button class="iconbtn" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg></button>
+      <button class="iconbtn" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l1 13H5z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="badge" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
 
 <main id="top">
-<section class="hero"><div class="wrap hero-grid">
-<div><div class="kicker">Beauty, Curated.</div><h1>Une beauté plus <em>simple, choisie, raffinée.</em></h1><p>Veloura réunit des essentiels skincare, makeup, haircare et self-care dans une expérience élégante, claire et pensée d’abord pour le mobile.</p><div class="cta"><button class="btn primary" onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">Découvrir Veloura</button><button class="btn ghost" onclick="document.querySelector('#selection').scrollIntoView({behavior:'smooth'})">Voir le lancement</button></div><div class="trust"><span>✓ Produits authentiques</span><span>✓ Paiement à la livraison</span><span>✓ Sélection claire</span></div></div>
-<div class="hero-visual">
-<svg viewBox="0 0 700 780" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3ded5"/><stop offset="1" stop-color="#cda697"/></linearGradient></defs><rect width="700" height="780" fill="url(#g)"/><circle cx="550" cy="140" r="125" fill="#7a1c31" opacity=".12"/><path d="M80 780C105 525 220 440 355 432c157-9 277 111 296 348Z" fill="#6e1728" opacity=".94"/><ellipse cx="360" cy="278" rx="150" ry="184" fill="#d8a68e"/><path d="M210 284c0-142 78-223 179-221 88 2 157 57 170 163-55-50-121-76-194-66-58 8-110 48-155 124Z" fill="#3d2527"/><ellipse cx="310" cy="301" rx="15" ry="7" fill="#3d2527"/><ellipse cx="424" cy="301" rx="15" ry="7" fill="#3d2527"/><path d="M333 383c29 18 62 18 91 0" stroke="#843749" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="516" cy="318" r="72" fill="#f0c8bf"/><path d="M516 250c13 31 12 66-1 101M476 278c30 4 58 19 80 44M474 331c34-7 67-2 98 12" stroke="#fff4ef" stroke-width="8" stroke-linecap="round"/><rect x="93" y="526" width="119" height="168" rx="30" fill="#f7efe9" stroke="#fff" stroke-width="3" transform="rotate(-9 153 610)"/><rect x="128" y="494" width="50" height="55" rx="12" fill="#7a1b30" transform="rotate(-9 153 521)"/><text x="153" y="612" text-anchor="middle" fill="#6e1728" font-family="Georgia" font-size="45" font-weight="700" transform="rotate(-9 153 612)">V</text></svg>
-<div class="note"><b>Visuel temporaire</b>À remplacer ensuite par une vraie photo de campagne ou de produit.</div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">Révèle ta plus belle version</div>
+      <h1>Veloura <em>Beauty, Curated.</em></h1>
+      <p>Une sélection des meilleures marques de cosmétiques pour une beauté saine, naturelle et éclatante.</p>
+      <a class="cta" href="#products">Découvrir nos produits <span>→</span></a>
+      <div class="trust">
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg><span>Produits 100% authentiques</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span>Livraison partout au Maroc</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span>Paiement à la livraison</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-circle">More<br>than<br>Beauty</div>
+      <div class="hero-words">Skincare<br>Makeup<br>Haircare<br>Bodycare<br>& More</div>
+    </div>
+  </div>
+</section>
+
+<section class="categories" id="categories">
+  <div class="container categories-grid">
+    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=85" alt="Skincare"><div class="cat-copy"><h3>Skincare</h3><p>Une peau saine et éclatante</p></div><span class="cat-arrow">›</span></a>
+    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=85" alt="Makeup"><div class="cat-copy"><h3>Makeup</h3><p>Sublime ta beauté naturelle</p></div><span class="cat-arrow">›</span></a>
+    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=85" alt="Haircare"><div class="cat-copy"><h3>Haircare</h3><p>Des cheveux plus forts et plus beaux</p></div><span class="cat-arrow">›</span></a>
+    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?auto=format&fit=crop&w=800&q=85" alt="Bodycare"><div class="cat-copy"><h3>Bodycare</h3><p>Un soin complet de la tête aux pieds</p></div><span class="cat-arrow">›</span></a>
+    <a class="cat" href="#products"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=85" alt="Bundles"><div class="cat-copy"><h3>Bundles</h3><p>Nos coffrets beauté exclusifs</p></div><span class="cat-arrow">›</span></a>
+  </div>
+</section>
+
+<section class="mainshop" id="products">
+  <div class="container shopgrid">
+    <div>
+      <h2 class="section-title">Nos Best Sellers</h2>
+      <div class="section-sub">Aperçu du futur catalogue — les vraies photos produits seront ajoutées ensuite.</div>
+      <div class="products">
+        <article class="product"><div class="pimg"><div class="bottle" style="--cap:#55bdc7"></div></div><div class="pbrand">CeraVe</div><div class="pname">Gel Nettoyant Moussant</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(120)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
+        <article class="product"><div class="pimg"><div class="tube"></div></div><div class="pbrand">La Roche-Posay</div><div class="pname">Sérum Hyalu B5</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(98)</span></div><div class="price">199 DH</div><button class="add">Ajouter</button></article>
+        <article class="product"><div class="pimg"><div class="dropper"></div></div><div class="pbrand">Garnier</div><div class="pname">Eau Micellaire</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(156)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
+        <article class="product"><div class="pimg"><div class="bottle" style="--cap:#d82b69"></div></div><div class="pbrand">Bioderma</div><div class="pname">Sensibio H2O</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(112)</span></div><div class="price">129 DH</div><button class="add">Ajouter</button></article>
+        <article class="product"><div class="pimg"><div class="mascara"><span></span><span></span></div></div><div class="pbrand">Maybelline</div><div class="pname">Lash Sensational</div><div class="rating">★ ★ ★ ★ ★ <span style="color:#8b7a80">(89)</span></div><div class="price">119 DH</div><button class="add">Ajouter</button></article>
+      </div>
+    </div>
+    <aside class="routine">
+      <div class="routine-copy">
+        <div class="eyebrow">Votre rituel beauté</div>
+        <h2>Beauty<br>Routines</h2>
+        <p>Des routines personnalisées pour une peau, des cheveux et un bien-être au quotidien.</p>
+        <a class="cta" href="#brands">Découvrir les routines →</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="values container">
+  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2 7 7-7 13L5 9z"/><path d="M5 9h14M9 2l3 7 3-7"/></svg><div><b>Marques reconnues</b><span>Les meilleures marques internationales</span></div></div>
+  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M19 4c-8 1-13 6-14 14 8 1 13-4 14-14Z"/><path d="M5 18c4-4 7-6 12-8"/></svg><div><b>Conseils beauté</b><span>Des recommandations personnalisées</span></div></div>
+  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14v-4a8 8 0 0 1 16 0v4"/><path d="M4 14h3v5H4zM17 14h3v5h-3z"/></svg><div><b>Support client</b><span>Une équipe à ton écoute</span></div></div>
+  <div class="value"><svg viewBox="0 0 24 24" fill="none"><path d="M20 5c-2-2-5-2-7 0l-1 1-1-1c-2-2-5-2-7 0-3 3-1 7 1 9l7 7 7-7c2-2 4-6 1-9Z"/></svg><div><b>Satisfaction garantie</b><span>Ton expérience au centre</span></div></div>
 </div>
-</div></section>
 
-<section id="categories"><div class="wrap"><div class="head"><div><div class="kicker">Shop by category</div><h2>Choisis ton univers beauté</h2></div><p>Des visuels de lancement sont déjà en place. Ils seront remplacés par les photos réelles du stock quand tu les auras.</p></div><div class="cats">
-<div class="cat"><svg viewBox="0 0 500 620"><rect width="500" height="620" fill="#d9aa96"/><ellipse cx="250" cy="175" rx="120" ry="140" fill="#dba087"/><path d="M114 207c27-128 118-185 212-144 59 25 94 77 92 149-63-52-170-63-304-5Z" fill="#3b2524"/><path d="M120 620c15-193 112-278 246-278 115 0 181 104 196 278Z" fill="#f2ded6"/></svg><div class="cat-copy"><h3>Skincare</h3><p>Nettoyants · Sérums · SPF · Hydratants</p></div></div>
-<div class="cat"><svg viewBox="0 0 500 620"><rect width="500" height="620" fill="#d9afa5"/><rect x="66" y="90" width="165" height="290" rx="24" fill="#2f2023" transform="rotate(-8 148 235)"/><circle cx="150" cy="235" r="57" fill="#c9876f"/><rect x="267" y="112" width="68" height="290" rx="24" fill="#8d263c" transform="rotate(8 301 257)"/><rect x="338" y="185" width="88" height="205" rx="20" fill="#f1dad4" transform="rotate(-11 382 287)"/></svg><div class="cat-copy"><h3>Makeup</h3><p>Lips · Blush · Essentials du quotidien</p></div></div>
-<div class="cat"><svg viewBox="0 0 500 620"><rect width="500" height="620" fill="#c9aa96"/><path d="M76 365c140-188 321-226 368-68-18 125-98 238-222 265-98 21-171-58-146-197Z" fill="#4a2c29"/><path d="M122 110c160 27 239 117 238 283-71-53-126-64-196-33 0-112-14-186-42-250Z" fill="#2d1b1b"/></svg><div class="cat-copy"><h3>Haircare</h3><p>Masques · Sérums · Leave-ins</p></div></div>
-<div class="cat"><svg viewBox="0 0 500 620"><rect width="500" height="620" fill="#741b2f"/><rect x="73" y="110" width="355" height="310" rx="32" fill="#f2dbd4"/><path d="M73 184h355M246 110v310" stroke="#7a1c30" stroke-width="22"/><path d="M134 96c30-62 99-42 112 14-58 1-94-3-112-14Zm234 0c-30-62-99-42-112 14 58 1 94-3 112-14Z" fill="#c88b83"/></svg><div class="cat-copy"><h3>Bundles</h3><p>Routines · Cadeaux · Découverte</p></div></div>
-</div></div></section>
-
-<section class="prelaunch" id="selection"><div class="wrap"><div class="head"><div><div class="kicker">Pre-launch selection</div><h2>Les emplacements produits sont prêts</h2></div><p>Aucun faux produit n’est présenté comme disponible. Ces cartes attendent seulement tes vraies photos, noms, prix et stock.</p></div><div class="products">
-<article class="product"><div class="pvis"><span class="tag">Skincare</span><svg viewBox="0 0 400 420"><rect width="400" height="420" fill="#f0e1d9"/><circle cx="304" cy="96" r="70" fill="#d69f92" opacity=".45"/><rect x="135" y="105" width="130" height="220" rx="30" fill="#fff"/><rect x="169" y="68" width="62" height="64" rx="13" fill="#742036"/><text x="200" y="230" text-anchor="middle" font-family="Georgia" font-size="56" fill="#6e1728">V</text></svg></div><div class="pbody"><h3>Produit skincare</h3><p>Emplacement réservé au premier best-seller.</p><button class="soon" disabled>Bientôt disponible</button></div></article>
-<article class="product"><div class="pvis"><span class="tag">Makeup</span><svg viewBox="0 0 400 420"><rect width="400" height="420" fill="#edd0c8"/><rect x="95" y="126" width="95" height="190" rx="22" fill="#fff" transform="rotate(-8 142 221)"/><rect x="238" y="103" width="62" height="216" rx="18" fill="#7c2136" transform="rotate(10 269 211)"/><circle cx="143" cy="204" r="38" fill="#c27278"/></svg></div><div class="pbody"><h3>Produit makeup</h3><p>Prêt pour lip oil, gloss, blush ou mascara.</p><button class="soon" disabled>Bientôt disponible</button></div></article>
-<article class="product"><div class="pvis"><span class="tag">Haircare</span><svg viewBox="0 0 400 420"><rect width="400" height="420" fill="#e5d1c3"/><path d="M70 336c68-167 184-239 262-161 51 52 28 141-35 188-66 49-162 57-227-27Z" fill="#5a342f"/><rect x="156" y="88" width="90" height="178" rx="28" fill="#fff3ed"/><rect x="181" y="60" width="40" height="50" rx="10" fill="#6e1728"/></svg></div><div class="pbody"><h3>Produit haircare</h3><p>Pour masque, sérum ou leave-in.</p><button class="soon" disabled>Bientôt disponible</button></div></article>
-<article class="product"><div class="pvis"><span class="tag">Bundle</span><svg viewBox="0 0 400 420"><rect width="400" height="420" fill="#f2ddd6"/><rect x="73" y="121" width="254" height="190" rx="26" fill="#7b1d31"/><path d="M73 175h254M196 121v190" stroke="#f2ddd6" stroke-width="19"/><path d="M130 110c31-52 72-31 70 13-45 0-66-4-70-13Zm140 0c-31-52-72-31-70 13 45 0 66-4 70-13Z" fill="#cb9188"/></svg></div><div class="pbody"><h3>Bundle Veloura</h3><p>Pour coffrets, routines et offres cadeaux.</p><button class="soon" disabled>Bientôt disponible</button></div></article>
-</div></div></section>
-
-<section><div class="wrap story"><div class="story-copy"><div class="kicker" style="color:#f3cbd3">Veloura edit</div><h2>Moins de choix. De meilleurs choix.</h2><p>L’idée est de lancer une sélection courte, claire et bien expliquée. Le site est prêt à devenir une vraie boutique dès que les références réelles seront choisies.</p><button class="btn ghost" onclick="document.querySelector('#why').scrollIntoView({behavior:'smooth'})">Notre approche</button></div><div class="story-art"><svg viewBox="0 0 700 600"><rect width="700" height="600" fill="#efd9d0"/><circle cx="530" cy="122" r="110" fill="#7a1d31" opacity=".14"/><rect x="115" y="122" width="145" height="300" rx="40" fill="#fff" transform="rotate(-8 187 272)"/><rect x="160" y="78" width="58" height="82" rx="12" fill="#6e1728" transform="rotate(-8 189 119)"/><rect x="353" y="178" width="115" height="235" rx="35" fill="#d9a49a" transform="rotate(9 410 295)"/><rect x="385" y="139" width="54" height="77" rx="12" fill="#6e1728" transform="rotate(9 412 177)"/><circle cx="525" cy="390" r="112" fill="#fff5f0"/><text x="190" y="295" text-anchor="middle" font-family="Georgia" font-size="66" fill="#6e1728" transform="rotate(-8 190 295)">V</text></svg></div></div></section>
-
-<section id="why"><div class="wrap"><div class="head"><div><div class="kicker">Pourquoi Veloura</div><h2>Une expérience pensée pour la confiance</h2></div><p>Le design, les visuels et la structure sont déjà prêts à recevoir les vrais produits.</p></div><div class="why">
-<div class="why-card"><div class="n">1</div><h3>Sélection claire</h3><p>Peu de références au départ, chacune avec un rôle et un bénéfice précis.</p></div>
-<div class="why-card"><div class="n">2</div><h3>Authenticité</h3><p>Les vraies fiches pourront afficher photos, format, prix, source et informations utiles.</p></div>
-<div class="why-card"><div class="n">3</div><h3>Mobile first</h3><p>Le site est optimisé pour les visiteurs venant d’Instagram et WhatsApp.</p></div>
-</div></div></section>
-
-<section><div class="wrap"><div class="head"><div><div class="kicker">Marques ciblées</div><h2>Une direction commerciale claire</h2></div><p>Ces marques indiquent la direction envisagée, sans prétendre qu’elles sont déjà en stock.</p></div><div class="brands">
-<div class="brand">CeraVe<span>Skincare</span></div><div class="brand">La Roche-Posay<span>Dermocosmétique</span></div><div class="brand">Bioderma<span>Skincare</span></div><div class="brand">Garnier<span>Beauty</span></div><div class="brand">Maybelline<span>Makeup</span></div><div class="brand">L'Oréal Paris<span>Beauty</span></div>
-</div></div></section>
-
-<section id="faq"><div class="wrap"><div class="head"><div><div class="kicker">FAQ</div><h2>Avant le lancement</h2></div></div><div class="faq">
-<details open><summary>Les produits sont-ils déjà disponibles ?</summary><p>Pas encore. Le site est en phase de pré-lancement. Les emplacements sont prêts pour le vrai stock, les vraies photos et les vrais prix.</p></details>
-<details><summary>Les images actuelles resteront-elles ?</summary><p>Non. Elles servent uniquement à poser l’identité visuelle et seront remplacées par les photos produits réelles.</p></details>
-<details><summary>Comment fonctionneront les commandes ?</summary><p>Le parcours prévu est Instagram → site → confirmation via WhatsApp ou formulaire une fois les coordonnées officielles ajoutées.</p></details>
-<details><summary>Le paiement à la livraison est-il prévu ?</summary><p>Oui, sous réserve du partenaire de livraison retenu pour le lancement.</p></details>
-</div></div></section>
-
-<section style="padding-top:18px"><div class="wrap launch"><div><h2>Veloura arrive bientôt.</h2><p>Prochaine étape : ajouter les vraies références, photos, prix et coordonnées de commande.</p></div><button class="btn ghost" onclick="document.querySelector('#top').scrollIntoView({behavior:'smooth'})">Retour en haut</button></div></section>
+<section class="brands" id="brands">
+  <div class="container brands-grid">
+    <div class="brand-intro">
+      <h3>Des marques<br>de confiance</h3>
+      <p>Une sélection des plus grandes marques de cosmétiques.</p>
+      <a class="cta" href="#products">Voir toutes les marques →</a>
+    </div>
+    <div class="brand-row">
+      <div class="brandlogo cerave">CeraVe</div>
+      <div class="brandlogo lrp">LA ROCHE-POSAY<br><small>LABORATOIRE DERMATOLOGIQUE</small></div>
+      <div class="brandlogo biod">BIODERMA</div>
+      <div class="brandlogo garnier">GARNIER</div>
+      <div class="brandlogo may">MAYBELLINE</div>
+      <div class="brandlogo loreal">L'ORÉAL<br><small>PARIS</small></div>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap"><div class="footer-grid"><div><div class="footer-logo">Veloura</div><p>Skincare, makeup, haircare & self-care.<br>Beauty, Curated.</p></div><div><b>Explorer</b><a href="#categories">Catégories</a><a href="#selection">Sélection</a><a href="#why">Pourquoi Veloura</a></div><div><b>Lancement</b><a href="#faq">FAQ</a><a href="#selection">Produits à venir</a></div></div><div class="copy"><span>© 2026 Veloura. Tous droits réservés.</span><span>Site de pré-lancement · Catalogue en préparation</span></div></div></footer>
-</body></html>
+<footer>© 2026 Veloura · Beauty, Curated. · Version pré-lancement</footer>
+<div class="carttoast" id="toast">Produit ajouté à l’aperçu du panier.</div>
+
+<script>
+let count=0;
+const countEl=document.getElementById('cartCount');
+const toast=document.getElementById('toast');
+document.querySelectorAll('.add').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    count++;countEl.textContent=count;
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),1300);
+  });
+});
+</script>
+</body>
+</html>
