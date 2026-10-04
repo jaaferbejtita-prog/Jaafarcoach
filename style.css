@@ -28,8 +28,11 @@ img{display:block;max-width:100%}
 
 .site-header{height:82px;padding:0 clamp(20px,5vw,76px);display:flex;align-items:center;gap:34px;background:rgba(247,245,240,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;direction:ltr}
 .logo{display:flex;align-items:center;gap:12px;font:800 24px/1 'Barlow Condensed',Arial,sans-serif;letter-spacing:.03em;white-space:nowrap}
-.logo b{display:grid;place-items:center;width:40px;height:40px;background:var(--navy);color:var(--orange);font-size:22px;transform:skew(-7deg)}
-.logo i{color:var(--orange)}
+.logo-mark{position:relative;display:flex;align-items:center;justify-content:center;gap:1px;width:42px;height:42px;border:1px solid rgba(255,98,62,.85);border-radius:50%;background:linear-gradient(145deg,#243545,var(--navy));box-shadow:0 8px 22px rgba(11,31,51,.18);font:900 18px/1 'Barlow Condensed',Arial,sans-serif;overflow:hidden}
+.logo-mark:after{content:"";position:absolute;width:54px;height:1px;background:rgba(255,98,62,.52);transform:rotate(-42deg)}
+.logo-mark span,.logo-mark i{position:relative;z-index:1;color:var(--white)}
+.logo-mark i,.logo-word i{color:var(--orange);font-style:normal}
+.logo-word{display:inline-flex;gap:5px}
 nav{display:flex;gap:32px;margin-left:auto;font-size:14px;font-weight:800}
 nav a{padding:8px 0;border-bottom:2px solid transparent}
 nav a:hover{border-color:var(--orange)}
@@ -79,6 +82,10 @@ nav a:hover{border-color:var(--orange)}
 .service-stack article{display:grid;grid-template-columns:46px 1fr;gap:18px;padding:31px 0;border-bottom:1px solid var(--line)}
 .service-stack article>b{font:800 22px/1 'Barlow Condensed',sans-serif;color:var(--orange)}
 .service-stack h3{font-size:25px;line-height:1.35;margin-bottom:10px}
+.service-label{display:inline-block;margin-bottom:8px;color:#9c3d28;font-size:11px;font-weight:900;letter-spacing:.08em}
+.service-price{display:flex;align-items:flex-end;gap:10px;margin:2px 0 14px;color:var(--navy)}
+.service-price strong{font:900 48px/.9 'Barlow Condensed',Arial,sans-serif;color:var(--orange)}
+.service-price span{font-size:13px;font-weight:800;color:var(--muted);padding-bottom:4px}
 .service-stack p{font-size:16px;line-height:1.8;color:var(--muted)}
 .service-option a{display:inline-block;margin-top:18px;font-size:15px;font-weight:900;color:var(--navy);border-bottom:2px solid var(--orange);padding-bottom:3px}
 .service-option a:hover{color:var(--orange)}
@@ -165,7 +172,7 @@ html[lang=en] .service-stack h3{font-size:29px}
 }
 
 @media(max-width:780px){
-  html{scroll-padding-top:72px}.site-header{height:72px;padding:0 18px;gap:12px}.logo{font-size:21px}.logo b{width:35px;height:35px;font-size:19px}.site-header nav{display:none}.header-actions{margin-left:auto}.button-small{min-height:39px;padding:7px 12px;font-size:12px}.button-small>span:last-child{display:none}#language{width:38px;height:38px}
+  html{scroll-padding-top:72px}.site-header{height:72px;padding:0 18px;gap:12px}.logo{font-size:21px}.logo-mark{width:36px;height:36px;font-size:16px}.site-header nav{display:none}.header-actions{margin-left:auto}.button-small{min-height:39px;padding:7px 12px;font-size:12px}.button-small>span:last-child{display:none}#language{width:38px;height:38px}
   .hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:56px 22px 30px;min-height:590px}.hero h1{font-size:clamp(46px,13vw,69px)}.hero-intro{font-size:18px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-actions .text-link{align-self:flex-start}.trust-row{padding-top:45px}.trust-row>span{padding:0 10px}.trust-row b{font-size:23px}.trust-row small{font-size:8px}.hero-media{min-height:0;aspect-ratio:4/5}.hero-media>img{object-position:center 20%}.hero-badge{left:22px;bottom:22px}.vertical-copy{right:12px;top:20px}
   .section{padding:72px 22px}.section-heading{grid-template-columns:1fr;gap:25px;margin-bottom:40px}.section-heading h2{font-size:46px}.section-heading>p{font-size:17px}.coaching-grid{gap:28px}.coach-card{min-height:0;aspect-ratio:4/5}.coach-card img{object-position:58% center}.coach-card figcaption{padding:25px;grid-template-columns:1fr;gap:10px}.coach-card figcaption p{font-size:16px}.service-stack{grid-template-columns:1fr}.service-stack article{display:grid;grid-template-columns:38px 1fr;padding:25px 0}.service-stack article>b{margin:0}.service-stack h3{font-size:22px}.process{grid-template-columns:1fr;margin-top:48px}.process ol{grid-template-columns:1fr}.process li{border:0;border-top:1px solid var(--line);padding:17px 0}.process li:first-child{border-top:1px solid var(--line)}
   .application{grid-template-columns:1fr;gap:42px}.application h2{font-size:45px}.application-copy>p:not(.eyebrow,.contact-note){font-size:17px}.application-facts{margin-top:32px}#coaching-form{margin-inline:-8px;padding:26px 18px}.form-top{align-items:center}.form-top h3{font-size:24px}.progress{width:76px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.form-buttons{grid-template-columns:82px 1fr}.button{gap:18px;font-size:15px;padding-inline:18px}
