@@ -17,8 +17,8 @@ const words = {
   ar: {
     step1: 'الخطوة 1 من 2', step2: 'الخطوة 2 من 2',
     title1: 'معلومات التواصل', title2: 'الهدف والروتين',
-    sending: 'جارٍ تجهيز رسالة الطلب…',
-    success: 'تحلّ تطبيق البريد برسالة جاهزة. راجعها واضغط إرسال باش يوصل الطلب.',
+    sending: 'جارٍ إرسال الطلب…',
+    success: 'تسجّل طلبك بنجاح. غادي نتواصل معك عبر الطريقة اللي اخترتي باش نناقشو الخطوة الجاية.',
     error: 'تعذّر إرسال الطلب دابا. المعلومات باقية فالاستمارة؛ عاود المحاولة من بعد.',
     rate: 'وصلت للحد المسموح ديال الطلبات اليوم. جرّب غداً أو تواصل عبر إنستغرام.',
     invalid: 'راجع المعلومات المطلوبة وحاول من جديد.'
@@ -26,8 +26,8 @@ const words = {
   en: {
     step1: 'STEP 1 OF 2', step2: 'STEP 2 OF 2',
     title1: 'CONTACT DETAILS', title2: 'GOAL & ROUTINE',
-    sending: 'Preparing your application email…',
-    success: 'Your email app opened with a ready message. Review it and tap send to deliver your application.',
+    sending: 'Sending your application…',
+    success: 'Your application has been saved. I’ll contact you through your preferred method to discuss the next step.',
     error: 'Your application could not be sent right now. Your answers are still here; please retry later.',
     rate: 'You have reached today’s application limit. Try tomorrow or contact me on Instagram.',
     invalid: 'Please check the required information and try again.'
@@ -106,8 +106,12 @@ document.querySelectorAll('[data-service]').forEach(link => {
   });
 });
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
+  if (currentStep === 1) {
+    if (validateStep(1)) { currentStep = 2; updateStep(); }
+    return;
+  }
   if (pending || !validateStep(2)) return;
 
   pending = true;
@@ -138,42 +142,35 @@ form.addEventListener('submit', event => {
     adult: fields.has('adult')
   };
 
-  const labels = {
-    service: {one_to_one: 'كوتشينغ فردي 1:1', workout_plan: 'جدول تمارين فقط'},
-    goal: {fat_loss: 'خفض الدهون', muscle: 'بناء العضلات', recomposition: 'تحسين التكوين الجسدي', routine: 'العودة للتمرين'},
-    level: {beginner: 'مبتدئ', intermediate: 'متوسط', advanced: 'متقدم'},
-    equipment: {gym: 'قاعة رياضية', home: 'الدار', both: 'القاعة والدار'},
-    contact_method: {whatsapp: 'واتساب', email: 'البريد الإلكتروني'},
-    start_timeline: {now: 'في أقرب وقت', two_weeks: 'خلال أسبوعين', month: 'خلال شهر'},
-    training_constraints: {none: 'لا', discuss: 'نعم، تُناقش بشكل خاص'}
-  };
-  const pick = (group, value) => labels[group]?.[value] || value || '-';
-  const subject = `طلب ${pick('service', payload.service)} — ${payload.name}`;
-  const body = [
-    'طلب جديد عبر موقع JAAFAR FIT', '',
-    `الاسم: ${payload.name}`,
-    `الخدمة: ${pick('service', payload.service)}`,
-    `البريد: ${payload.email}`,
-    `واتساب: ${payload.phone}`,
-    `العمر: ${payload.age}`,
-    `التواصل المفضل: ${pick('contact_method', payload.contact_method)}`,
-    `الهدف: ${pick('goal', payload.goal)}`,
-    `المستوى: ${pick('level', payload.level)}`,
-    `الطول: ${payload.height_cm} cm`,
-    `الوزن: ${payload.weight_kg} kg`,
-    `أيام التدريب: ${payload.days}`,
-    `مكان التدريب: ${pick('equipment', payload.equipment)}`,
-    `موعد البداية: ${pick('start_timeline', payload.start_timeline)}`,
-    `قيود التدريب: ${pick('training_constraints', payload.training_constraints)}`,
-    `التحدي: ${payload.notes || '-'}`,
-    '', `مرجع الطلب: ${payload.id}`
-  ].join('\n');
-  window.location.href = `mailto:jaafarbejtita@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  showFeedback('success');
-  feedback.focus();
-  pending = false;
-  submitButton.disabled = false;
-  form.removeAttribute('aria-busy');
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 18000);
+  try {
+    const response = await fetch('https://jaafar-fit-coaching.jaafarbejtita.chatgpt.site/api/apply', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+      credentials: 'same-origin',
+      signal: controller.signal
+    });
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) {
+      showFeedback(response.status === 429 ? 'rate' : response.status === 400 ? 'invalid' : 'error');
+    } else {
+      form.reset();
+      applicationId = crypto.randomUUID();
+      currentStep = 1;
+      updateStep(false);
+      showFeedback('success');
+      feedback.focus();
+    }
+  } catch {
+    showFeedback('error');
+  } finally {
+    clearTimeout(timeout);
+    pending = false;
+    submitButton.disabled = false;
+    form.removeAttribute('aria-busy');
+  }
 });
 
 translatePage();
