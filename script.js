@@ -7,11 +7,17 @@ const steps = [...form.querySelectorAll('.form-step')];
 const stepLabel = document.getElementById('step-label');
 const stepTitle = document.getElementById('step-title');
 const progress = form.querySelector('.progress i');
+const installButton = document.getElementById('install-app');
+const installDialog = document.getElementById('install-dialog');
+const installConfirm = installDialog?.querySelector('.confirm-install');
+const iosInstall = installDialog?.querySelector('.ios-install');
+const genericInstall = installDialog?.querySelector('.generic-install');
 
 let currentStep = 1;
 let pending = false;
 let feedbackKey = '';
 let applicationId = crypto.randomUUID();
+let installPrompt = null;
 
 const words = {
   ar: {
@@ -86,6 +92,45 @@ languageButton.addEventListener('click', () => {
   root.dir = next === 'ar' ? 'rtl' : 'ltr';
   translatePage();
 });
+
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault();
+  installPrompt = event;
+  if (!isStandalone) installButton.hidden = false;
+});
+
+if (isIOS && !isStandalone) installButton.hidden = false;
+
+installButton?.addEventListener('click', () => {
+  iosInstall.hidden = !isIOS;
+  genericInstall.hidden = isIOS;
+  installDialog.showModal();
+});
+
+installDialog?.querySelector('.dialog-close')?.addEventListener('click', () => installDialog.close());
+installDialog?.addEventListener('click', event => {
+  if (event.target === installDialog) installDialog.close();
+});
+
+installConfirm?.addEventListener('click', async () => {
+  if (!installPrompt) return;
+  installDialog.close();
+  await installPrompt.prompt();
+  installPrompt = null;
+  installButton.hidden = true;
+});
+
+window.addEventListener('appinstalled', () => {
+  installButton.hidden = true;
+  installDialog?.close();
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+}
 
 form.querySelector('.next').addEventListener('click', () => {
   if (!validateStep(1)) return;
